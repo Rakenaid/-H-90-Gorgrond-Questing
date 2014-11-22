@@ -1,0 +1,419 @@
+<HBProfile>
+  <Name>[H] Tac's Grogrond LUMBER Questing v1.5</Name>
+  <MinDurability>.5</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+  <MinLevel>92</MinLevel>
+  <MaxLevel>101</MaxLevel>
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>True</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+  <MailGrey>False</MailGrey>
+  <MailWhite>False</MailWhite>
+  <MailGreen>False</MailGreen>
+  <MailBlue>False</MailBlue>
+  <MailPurple>False</MailPurple>
+
+  <AvoidMobs>
+    <Mob Name="Sor the Eradicator" Entry="80691" />
+  </AvoidMobs>
+
+  <Blackspots>
+    <Blackspot X="5275.027" Y="1420.075" Z="80.20902" Radius="3.127838" /> <!-- STUCK IN ROOT -->
+    <Blackspot X="5793.23" Y="1306.781" Z="107.0279" Radius="7.082174" />
+    <Blackspot X="5817.542" Y="1296.454" Z="109.6458" Radius="5.405269" /> <!-- STUCK AFTER YOUR BASE YOUR CHOICE -->
+    <Blackspot X="5809.887" Y="1281.951" Z="109.4775" Radius="18.45179" />
+    <Blackspot X="5794.363" Y="1306.351" Z="107.2419" Radius="6.223967" />
+    <Blackspot X="5791.898" Y="1307.156" Z="107.4296" Radius="9.220809" />
+
+  </Blackspots>
+
+  <Vendors>
+    <Vendor Name="Budgy" Entry="84234" Type="Repair" X="6610.504" Y="1286.526" Z="64.83819" />
+  </Vendors>
+
+    <!-- GORGROND QUEST START -->
+    <QuestOrder>
+    
+    <CustomBehavior File="Message" Text="Compiling Gorgrond Quests" LogColor="CornflowerBlue" />
+    
+    <!-- The Laughing Skull (33543) -->
+
+    <PickUp QuestName="The Laughing Skull" QuestId="33543" GiverId="74594" GiverName="Durotan" X="5392.558" Y="2018.155" Z="175.3698" />
+    <CustomBehavior File="Message" Text="Turning In Quest (33543): The Laughing Skull" LogColor="Cyan" />
+    <TurnIn QuestId="33543" TurnInId="84176" TurnInName="Ripfist" QuestName="The Laughing Skull" X="5583.909" Y="1894.608" Z="129.205"  />
+    
+    <!-- Goren, Goren, Gone! -->
+    <If Condition="!IsQuestCompleted(33544)" >
+    <CustomBehavior File="Message" Text="Getting Quest (33544): Goren, Goren, Gone!" LogColor="Cyan" />
+    <PickUp QuestName="Goren, Goren, Gone!" QuestId="33544" GiverId="84176" GiverName="Ripfist" X="5583.909" Y="1894.608" Z="129.205" />
+    </If>
+    <CustomBehavior File="Message" Text="Doing Quest (33544): Goren, Goren, Gone!" LogColor="Red" />
+    <Objective QuestName="Goren, Goren, Gone!" QuestId="33544" Type="KillMob" KillCount="8" MobId="79416" MobName="Acidtooth Devourer" />
+    <CustomBehavior File="Message" Text="Turning In Quest (33544): Goren, Goren, Gone!" LogColor="Cyan" />
+    <TurnIn QuestId="33544" TurnInId="33544" />
+
+
+    <!-- We Die Laughing -->
+    <CustomBehavior File="Message" Text="Pickup Quest (33584): We Die Laughing!" LogColor="Cyan" />
+    <PickUp QuestName="We Die Laughing!" QuestId="33548" GiverId="76987" GiverName="Kaz the Shrieker" X="5666.354" Y="1850.714" Z="116.9064"/>
+    <CustomBehavior File="Message" Text="Doing Quest (33584): We Die Laughing!" LogColor="Red" />
+    <CustomBehavior File="InteractWith" QuestId="33548" MobId="75164" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="20" WaitTime="2000" Range="5" CollectionDistance="1000" PreInteractMountStrategy="DismountOrCancelShapeshift" >
+    <Hotspots>
+      <Hotspot X="5628.324" Y="1672.869" Z="122.098" />
+      <Hotspot X="5568.279" Y="1709.094" Z="112.7067" />
+      <Hotspot X="5558.957" Y="1716.167" Z="118.9009" />
+      <Hotspot X="5542.172" Y="1713.725" Z="119.8894" />
+      <Hotspot X="5595.208" Y="1755.846" Z="119.3562" />
+    </Hotspots>
+    </CustomBehavior>
+
+    <!-- Eye Candy -->
+    <CustomBehavior File="Message" Text="Pickup Quest (33563): Eye Candy" LogColor="Cyan" />
+    <PickUp QuestName="Eye Candy" QuestId="33563" GiverId="74611" GiverName="Limbflayer" X="5668.525" Y="1756.094" Z="121.9647" />
+    <CustomBehavior File="Message" Text="Doing Quest (33563): Eye Candy" LogColor="Red" />
+    <Objective QuestName="Eye Candy" QuestId="33563" Type="KillMob" KillCount="1" MobId="79500" MobName="Skothwa" />
+    <CustomBehavior File="Message" Text="Turning In Quest (33563): Eye Candy" LogColor="Cyan" />
+    <TurnIn QuestId="33563" TurnInId="74611" TurnInName="Limbflayer" QuestName="Eye Candy" X="5549.031" Y="1675" Z="109.3972"  />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33548): We Die Laughing!" LogColor="Cyan" />
+    <TurnIn QuestId="33548" TurnInId="74606" TurnInName="Kaz the Shrieker" QuestName="We Die Laughing!" X="5551.05" Y="1677.054" Z="109.6388" />
+
+    <!-- A Flare for the Dramatic -->
+    <CustomBehavior File="Message" Text="Getting Quest (33593): A Flare for the Dramatic" LogColor="Cyan" />
+    <PickUp QuestName="A Flare for the Dramatic" QuestId="33593" GiverId="74594" GiverName="Durotan" X="5552.747" Y="1674.054" Z="109.5331" />
+    <CustomBehavior File="Message" Text="Doing Quest (33548): We Die Laughing!" LogColor="Red" />
+    <UseItem QuestId="33593" ItemId="115534" X="5552.747" Y="1674.054" Z="109.5331" />
+    <CustomBehavior File="Message" Text="Turning In Quest (33593): A Flare for the Dramatic" LogColor="Cyan" />
+    <TurnIn QuestId="33593" TurnInId="74594" TurnInName="Durotan" QuestName="A Flare for the Dramatic" X="5552.747" Y="1674.054" Z="109.5331" />
+
+    <!-- Penny From Heaven -->
+    <CustomBehavior File="Message" Text="Getting Quest (36434): Penny From Heaven" LogColor="Cyan" />
+    <PickUp QuestName="Penny From Heaven" QuestId="36434" GiverId="74594" GiverName="Durotan" X="5552.747" Y="1674.054" Z="109.5331"/>
+    <CustomBehavior File="Message" Text="Turning In Quest (36436): Penny From Heaven" LogColor="Cyan" />
+    <TurnIn QuestId="36434" TurnInId="85147" TurnInName="Penny Clobberbottom" QuestName="Penny From Heaven" X="5742.079" Y="1331.092" Z="102.9356" />
+
+    <!-- Just Another Stick in the Wall -->
+    <CustomBehavior File="Message" Text="Getting Quest (36460): Just Another Stick in the Wall " LogColor="Cyan" />
+    <PickUp QuestName="Just Another Stick in the Wall" QuestId="36460" GiverId="85147" GiverName="Penny Clobberbottom" X="5742.079" Y="1331.092" Z="102.9356"/>
+    <CustomBehavior File="Message" Text="Doing Quest (36460): Just Another Stick in the Wall " LogColor="Red" />
+    <CustomBehavior File="InteractWith" QuestId="36460" MobId="234558" ObjectType="GameObject" NumOfTimes="1" WaitTime="1000" Range="5" >
+    </CustomBehavior>
+    <CustomBehavior File="Message" Text="Turning In Quest (36460): Just Another Stick in the Wall" LogColor="Cyan" />
+    <TurnIn QuestId="36460" TurnInId="74594" TurnInName="Durotan" QuestName="Just Another Stick in the Wall" X="5758.469" Y="1316.151" Z="106.6152" />
+
+    <!-- Your Base, Your Choice -->
+    <If Condition="HasQuest(35151) &amp;&amp; !IsQuestCompleted(35151)" >
+    <PickUp QuestName="Your Base, Your Choice" QuestId="35151" GiverId="74594" GiverName="Durotan" X="5758.469" Y="1316.151" Z="106.6152"/> 
+
+     DEFAULT CHOICE WILL BE LUMBER YARD FOR RESOURCES 
+    <CustomBehavior File="InteractWith" QuestId="35151" MobId="74594" ObjectType="GameObject" NumOfTimes="1" WaitTime="1000" Range="5" X="5758.469" Y="1316.151" Z="106.6152" />
+
+    <CustomBehavior File="Message" Text="Making a Garrison choice..." Wait="1000" LogColor="Cyan" />
+    <CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton3:Click()" WaitTime="1000" />
+
+    <CustomBehavior File="Message" Text="Choosing LowLands Lumber Yard" LogColor="Cyan" />
+    <CustomBehavior File="Misc\RunLua" Lua="QuestChoiceFrameOption1.OptionButton:Click()" WaitTime="2500" />
+    <CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+
+    
+    <CustomBehavior File="Message" Text="Turning In Quest (35151) Your Base, Your Choice" LogColor="Cyan" />
+    <TurnIn QuestId="35151" TurnInId="74594" TurnInName="Durotan" QuestName="Your Base, Your Choice" X="5763.857" Y="1297.016" Z="106.9532" />
+    </If> -->
+
+    <!-- The Razorbloom -->
+    <PickUp QuestName="The Razorbloom" QuestId="36474" GiverId="74594" GiverName="Durotan" X="5763.857" Y="1297.016" Z="106.9532" />
+
+    <!-- Skulltakers in Crimson Fen -->
+    <PickUp QuestName="Skulltakers in Crimson Fen" QuestId="35667" GiverId="82732" GiverName="Marrow" X="5775.616" Y="1281.615" Z="107.7673" />
+
+    <!-- Tangleheart -->
+    <PickUp QuestName="Tangleheart" QuestId="35707" GiverId="85077" GiverName="Penny Clobberbottom" X="5793.926" Y="1275.813" Z="109.2718"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (36474): The Razorbloom" LogColor="Cyan" />
+    <TurnIn QuestId="36474" TurnInId="74593" TurnInName="Draka" QuestName="The Razorbloom" X="5693.852" Y="1257.575" Z="84.05952" />
+
+    <!-- The Infested -->
+    <PickUp QuestName="The Infested" QuestId="35400" GiverId="74593" GiverName="Draka" X="5693.852" Y="1257.575" Z="84.05952"/>
+    <Objective QuestName="The Infested" QuestId="35400" Type="KillMob" KillCount="6" MobId="81617" MobName="Infested Orc" />
+    <CustomBehavior File="Message" Text="Turning In Quest (35400): The Infested" LogColor="Cyan" />
+    <TurnIn QuestId="35400" TurnInId="74593" TurnInName="Draka" QuestName="The Infested" X="5693.852" Y="1257.575" Z="84.0595" />
+
+    <!-- The Voice of Iyu -->
+    <PickUp QuestName="The Voice of Iyu" QuestId="35402" GiverId="74606" GiverName="Kaz the Shrieker" X="5691.138" Y="1257.413" Z="83.3084" />
+    <Objective QuestName="The Voice of Iyu" QuestId="35402" Type="KillMob" KillCount="1" MobId="81634" MobName="Voice of Iyu" X="5684.897" Y="1026.291" Z="83.94032" />
+    <TurnIn QuestId="35402" TurnInId="74606" TurnInName="Kaz the Shrieker" QuestName="The Voice of Iyu" X="5691.138" Y="1257.413" Z="83.30887" />
+
+    <!-- Mossy Fate -->
+    <PickUp QuestName="Mossy Fate" QuestId="35399" GiverId="74606" GiverName="Kaz the Shrieker" X="5691.138" Y="1257.413" Z="83.3084" />
+    <CustomBehavior File="InteractWith" QuestId="35399" MobId="82215" ObjectType="GameObject" NumOfTimes="1" WaitTime="1000" Range="5" X="5611.574" Y="1150.432" Z="84.88911" /> <!-- FACE CHEWER-->
+    <CustomBehavior File="InteractWith" QuestId="35399" MobId="82193" ObjectType="GameObject" NumOfTimes="1" WaitTime="1000" Range="5" X="5593.682" Y="1195.676" Z="83.49245" />
+    <CustomBehavior File="InteractWith" QuestId="35399" MobId="82217" ObjectType="GameObject" NumOfTimes="1" WaitTime="1000" Range="5" X="5565.627" Y="1121.875" Z="83.76427" />    
+
+    <!-- Super Seeds -->
+    <PickUp QuestName="Super Seeds" QuestId="35406" GiverId="235129" GiverName="Enriched Seeds" X="5723.204" Y="1020.839" Z="79.57996" />
+    <CustomBehavior File="Message" Text="Turning In Quest (35406): Super Seeds" LogColor="Cyan" />
+    <TurnIn QuestId="35406" TurnInId="74606" TurnInName="Kaz the Shrieker" QuestName="Super Seeds" X="5691.138" Y="1257.413" Z="83.30887" />   
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35399): Mossy Fate" LogColor="Cyan" />
+    <TurnIn QuestId="35399" TurnInId="74606" TurnInName="Kaz the Shrieker" QuestName="Mossy Fate" X="5691.138" Y="1257.413" Z="83.30887" />
+
+    <!-- Bushwhacker -->
+    <PickUp QuestName="Bushwhacker" QuestId="35432" GiverId="74593" GiverName="Draka" WaitTime="2000" X="5693.852" Y="1257.575" Z="84.0595" />
+
+    <!-- Cutter -->
+    <PickUp QuestName="Cutter" QuestId="35430" GiverId="74606" GiverName="Kaz the Shrieker" X="5691.138" Y="1257.413" Z="83.30887" />
+
+    <!-- Pollen Power -->
+    <PickUp QuestName="Pollen Power" QuestId="35429" GiverId="74606" GiverName="Kaz the Shrieker" X="5691.138" Y="1257.413" Z="83.30887" />
+    <Objective QuestName="Pollen Power" QuestId="35429" Type="CollectItem" ItemName="Potent Pollen" ItemId="38082" CollectCount="20" /> 
+    <Objective QuestName="Bushwhacker" QuestId="35432" Type="KillMob" KillCount="7" MobId="81575" MobName="Bloom Weaver" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35430): Cutter" LogColor="Cyan" />
+    <TurnIn QuestId="35430" TurnInId="82254" TurnInName="Cutter" QuestName="Cutter" X="5011.565" Y="1491.769" Z="106.2692" />
+
+    <!-- A Green Ogron? -->
+    <PickUp QuestName="A Green Ogron?" QuestId="36482" GiverId="82274" GiverName="Cutter" X="5013.046" Y="1492.66" Z="106.2597" />
+    <Objective QuestName="A Green Ogron?" QuestId="36482" Type="KillMob" KillCount="1" MobId="82062" MobName="Infested Ogron" X="5195.9" Y="1555.344" Z="73.56554" />
+    <CustomBehavior File="Message" Text="Turning In Quest (36482): A Green Ogron?" LogColor="Cyan" />
+    <TurnIn QuestId="36482" TurnInId="82274" TurnInName="Cutter" QuestName="A Green Ogron?" Range="5" X="5184.508" Y="1596.104" Z="73.41584" />
+
+    <!-- We Burn the Dead -->
+    <PickUp QuestName="We Burn the Dead" QuestId="35487" GiverId="82274" GiverName="Cutter" X="5013.046" Y="1492.66" Z="106.2597" />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85593" ObjectType="GameObject" NumOfTimes="1"  Range="5" />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85593" ObjectType="GameObject" NumOfTimes="1"  Range="5" X="4980.335" Y="1644.988" Z="112.4062" />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85563" ObjectType="GameObject" NumOfTimes="1"  Range="5" X="4983.754" Y="1659.308" Z="112.629"  />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85563" ObjectType="GameObject" NumOfTimes="6"  Range="5" X="4970.64" Y="1649.638" Z="112.9162" />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85563" ObjectType="GameObject" NumOfTimes="6"  Range="5" X="4953.66" Y="1651.588" Z="112.4481" />
+    <CustomBehavior File="InteractWith" QuestId="35487" MobId="85563" ObjectType="GameObject" NumOfTimes="6"  Range="5" X="4976.783" Y="1674.754" Z="112.8854" />
+
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35487): Cutter" LogColor="Cyan" />
+    <TurnIn QuestId="35487" TurnInId="82274" TurnInName="Cutter" QuestName="We Burn the Dead" Range="5" X="5184.508" Y="1596.104" Z="73.41584" />
+    
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35432): Bushwhacker" LogColor="Cyan" />
+    <TurnIn QuestId="35432" TurnInId="82233" TurnInName="Draka" QuestName="Bushwhacker" X="4911.972" Y="1627.708" Z="116.7826" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35429): Pollen Power" LogColor="Cyan" />
+    <TurnIn QuestId="35429" TurnInId="82228" TurnInName="Kaz the Shrieker" QuestName="Pollen Power" X="4907.062" Y="1627.014" Z="117.2119"/>
+
+    <!-- Secrets of the Botani -->
+    <PickUp QuestName="Secrets of the Botani" QuestId="35536" GiverId="82274" GiverName="Cutter" X="5186.044" Y="1594.414" Z="73.53061" />
+
+    <CustomBehavior File="Message" Text="Turning in Quest (35536): Secrets of the Botani" LogColor="Cyan" />
+    <TurnIn QuestId="35536" TurnInId="82228" TurnInName="Kaz the Shrieker" QuestName="Secrets of the Botani" X="4907.062" Y="1627.014" Z="117.2116"/>  
+
+    <!-- The Life Spring -->
+    <PickUp QuestName="The Life Spring" QuestId="35434" GiverId="82228" GiverName="Kaz the Shrieker" X="4907.062" Y="1627.014" Z="117.2123" />
+
+    <!-- Cut Them Down -->
+    <PickUp QuestName="Cut Them Down" QuestId="35433" GiverId="82233" GiverName="Draka" X="4911.972" Y="1627.708" Z="116.7827" /> 
+    <Objective QuestName="Cut Them Down" QuestId="35433" Type="KillMob" KillCount="3" MobId="81553" MobName="Dew Master" />
+    <Objective QuestName="The Life Spring" QuestId="35434" Type="KillMob" KillCount="1" MobId="75094" MobName="Utrophis" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35433): Cut Them Down" LogColor="Cyan" />
+    <TurnIn QuestId="35433" TurnInId="82233" TurnInName="Draka" QuestName="Cut Them Down" X="4911.972" Y="1627.708" Z="116.7827" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35434): The Life Spring" LogColor="Cyan" />
+    <TurnIn QuestId="35434" TurnInId="82228" TurnInName="Kaz the Shrieker" QuestName="The Life Spring" X="4907.062" Y="1627.014" Z="117.2115" />
+
+    <!-- Thieving Dwarves -->
+    <PickUp QuestName="Thieving Dwarves" QuestId="36488" GiverId="82228" GiverName="Kaz the Shrieker" X="4907.062" Y="1627.014" Z="117.2115"/>
+    <CustomBehavior File="Message" Text="Turning In Quest (36488): Thieving Dwarves" LogColor="Cyan" />
+    <TurnIn QuestId="36488" TurnInId="85601" TurnInName="Cutter" QuestName="Thieving Dwarves" X="4489.742" Y="1265.661" Z="149.7657" />
+
+    <!-- Will of the Genesaur -->
+    <PickUp QuestName="Will of the Genesaur" QuestId="35509" GiverId="85601" GiverName="Cutter" X="4489.742" Y="1265.661" Z="149.7657"/>
+    <CustomBehavior File="InteractWith" QuestId="35509" MobId="231961" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="1" WaitTime="5000" Range="5" CollectionDistance="1000" >
+    </CustomBehavior>
+    <CustomBehavior File="Message" Text="Turning In Quest (35509): Will of the Genesaur" LogColor="Cyan" />
+    <TurnIn QuestId="35509" TurnInId="82334" TurnInName="Cutter" QuestName="Will of the Genesaur" X="4458.262" Y="1137.451" Z="141.2391" />
+
+    <!-- Down the Goren Hole -->
+    <PickUp QuestName="Down the Goren Hole" QuestId="35507" GiverId="85601" GiverName="Cutter" />
+    <Objective QuestName="Down the Goren Hole" QuestId="35507" Type="KillMob" KillCount="7" MobId="81691" MobName="Shardback Breacher" />
+
+    <!-- Doomoshot -->
+    <PickUp QuestName="Doomshot" QuestId="35501" GiverId="232492" GiverName="Doomshot" X="4447.05" Y="1142.946" Z="169.2294" />
+    <CustomBehavior File="InteractWith" QuestId="35501" MobId="231954" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="4" WaitTime="1000" Range="5" CollectionDistance="1000" PreInteractMountStrategy="DismountOrCancelShapeshift" >
+    </CustomBehavior>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35507): Down the Goren Hole" LogColor="Cyan" />
+    <TurnIn QuestId="35507" TurnInId="82334" TurnInName="Cutter" QuestName="Down the Goren Hole" X="4458.262" Y="1137.451" Z="141.2392" />
+
+    <TurnIn QuestId="35501" TurnInId="232489" TurnInName="Weapon Loader" QuestName="Doomshot" X="4452.796" Y="1149.05" Z="141.2402" />
+
+    <!-- Iyu -->
+    <PickUp QuestName="Iyu" QuestId="35510" GiverId="85601" GiverName="Cutter" X="4458.262" Y="1137.451" Z="141.2392"/>
+    <Objective QuestName="Iyu" QuestId="35510" Type="KillMob" KillCount="1" MobId="78819" MobName="Iyu" X="4552.229" Y="1185.2" Z="163.1064" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35510): Iyu" LogColor="Cyan" />
+    <TurnIn QuestId="35510" TurnInId="82337" TurnInName="Draka" QuestName="Iyu" X="4503.802" Y="1165.127" Z="166.8236" />
+
+    <!-- Power of the Genesaur -->
+    <CustomBehavior File="Message" Text="Turning In Quest (35416): Power of the Genesaur" LogColor="Cyan" />    
+    <PickUp QuestName="Power of the Genesaur" QuestId="35416" GiverId="82337" GiverName="Draka" />
+
+    <!-- Kaz the Shrieker -->
+    <PickUp QuestName="Kaz the Shrieker" QuestId="35511" GiverId="82338" GiverName="Kaz the Shrieker" X="4506.272" Y="1159.967" Z="166.7333"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35511): Kaz the Shrieker" LogColor="Cyan" />
+    <TurnIn QuestId="35511" TurnInId="82338" TurnInName="Kaz the Shrieker" QuestName="Kaz the Shrieker" X="4506.272" Y="1159.967" Z="166.7333" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35416): Power of the Genesaur" LogColor="Cyan" />
+    <TurnIn QuestId="35416" TurnInId="74594" TurnInName="Durotan" QuestName="Power of the Genesaur" X="5763.857" Y="1297.016" Z="106.9526" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35667): Skulltakers in Crimson Fen" LogColor="Cyan" />
+    <TurnIn QuestId="35667" TurnInId="81218" TurnInName="Grulkor" QuestName="Skulltakers in Crimson Fen" X="5956.569" Y="613.7361" Z="43.13441" />    
+
+    <!-- Basic Skulltaking -->
+    <PickUp QuestName="Basic Skulltaking" QuestId="35016" GiverId="81218" GiverName="Grulkor" X="5956.569" Y="613.7361" Z="43.13441"/>
+    <CustomBehavior File="InteractWith" QuestId="35016" MobId="80807" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="5"  >
+    <Objective QuestName="Basic Skulltaking" QuestId="35016" Type="CollectItem" ItemName="Skulltaker Skull" ItemId="112640" CollectCount="5" />
+    <CustomBehavior File="Message" Text="Turning In Quest (35016): Basic Skulltaking" LogColor="Cyan" />
+    <TurnIn QuestId="35016" TurnInId="80757" TurnInName="Grulkor" QuestName="Basic Skulltaking" X="6213.181" Y="389.1927" Z="4.079147" />
+    </CustomBehavior>
+
+    <!-- Skulltaker's Revenge -->
+    <PickUp QuestName="Skulltaker's Revenge" QuestId="35017" GiverId="81185" GiverName="Dying Skulltaker" X="6031.535" Y="583.7969" Z="25.80789" />
+    <Objective QuestName="Skulltaker's Revenge" QuestId="35017" Type="KillMob" KillCount="7" MobId="80721" MobName="Fungus Covered Shambler" />
+    <CustomBehavior File="Message" Text="Turning In Quest (35017): Skulltaker's Revenge" LogColor="Cyan" />
+    <TurnIn QuestId="35017" TurnInId="80757" TurnInName="Grulkor" QuestName="Skulltaker's Revenge" X="6213.181" Y="389.1927" Z="4.079147" />        
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35707): Tangleheart" LogColor="Cyan" />
+    <TurnIn QuestId="35707" TurnInId="82574" TurnInName="Penny Clobberbottom" QuestName="Tangleheart" X="5690.503" Y="493.5052" Z="105.4634"/>
+
+    <!-- Growing Wood -->
+    <PickUp QuestName="Growing Wood" QuestId="35506" GiverId="82574" GiverName="Penny Clobberbottom" X="5690.503" Y="493.5052" Z="105.4634" />
+    <Objective QuestName="Growing Wood" QuestId="35506" Type="CollectItem" ItemName="Ancient Growth Sap" ItemId="113136" CollectCount="100" />
+
+    <!-- Lost Lumberjack -->
+    <PickUp QuestName="Lost Lumberjack" QuestId="35505" GiverId="84811" GiverName="Thuldren" X="5688.624" Y="494.4774" Z="105.8321" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35505): Lost Lumberjack" LogColor="Cyan" />
+    <TurnIn QuestId="35505" TurnInId="82569" TurnInName="Frenna" QuestName="Lost Lumberjack" X="5669.444" Y="401.2309" Z="98.12361" />
+
+    <!-- Chapter I: Plant Food -->
+    <PickUp QuestName="Chapter I: Plant Food" QuestId="35508" GiverId="82569" GiverName="Frenna" X="5669.444" Y="401.2309" Z="98.12361" />
+    <CustomBehavior File="InteractWith" QuestId="35508" MobId="232491" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="8" WaitTime="1000" Range="5" CollectionDistance="5000" PreInteractMountStrategy="DismountOrCancelShapeshift" >
+    </CustomBehavior>
+
+    <!-- Chapter II: The Harvest -->
+    <PickUp QuestName="Chapter II: The Harvest" QuestId="35527" GiverId="82569" GiverName="Frenna" X="5669.444" Y="401.2309" Z="98.12361" />
+    <Objective QuestName="Chapter II: The Harvest" QuestId="35527" Type="KillMob" KillCount="1" MobId="82372" MobName="Ontogen the Harvester" X="5714.703" Y="169.8056" Z="65.67124" />
+
+    <!-- Chapter III: Ritual of the Charred -->
+    <PickUp QuestName="Chapter III: Ritual of the Charred" QuestId="35524" GiverId="82569" GiverName="Frenna" X="5669.444" Y="401.2309" Z="98.12361"/>
+    <Objective QuestName="Chapter III: Ritual of the Charred" QuestId="35524" Type="KillMob" KillCount="4" MobId="82284" MobName="Emberbark Ancient" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35506): Growing Wood" LogColor="Cyan" />    
+    <TurnIn QuestId="35506" TurnInId="82574" TurnInName="Penny Clobberbottom" QuestName="Growing Wood" X="6059.319" Y="102.5851" Z="47.44405" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35508): Chapter I: Plant Food" LogColor="Cyan" />    
+    <TurnIn QuestId="35508" TurnInId="82574" TurnInName="Penny Clobberbottom" WaitTime="2000" QuestName="Chapter I: Plant Food" X="6059.319" Y="102.5851" Z="47.44405" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (82574): Chapter II: The Harvest" LogColor="Cyan" />  
+    <TurnIn QuestId="35527" TurnInId="82574" TurnInName="Penny Clobberbottom" WaitTime="2000" QuestName="Chapter II: The Harvest" X="6059.319" Y="102.5851" Z="47.44405"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (35524): Chapter III: Ritual of the Charred" LogColor="Cyan" />  
+    <TurnIn QuestId="35524" TurnInId="82574" TurnInName="Penny Clobberbottom" WaitTime="2000" QuestName="Chapter III: Ritual of the Charred" X="6059.319" Y="102.5851" Z="47.44405" />
+
+
+
+    <!-- Reagents from Rakthoth -->
+    <PickUp QuestName="Reagents from Rakthoth" QuestId="33694" GiverId="82732" GiverName="Marrow" X="5775.616" Y="1281.615" Z="107.7673" />
+    
+
+ 
+
+    <!-- Penny Follower 
+    <If Condition="HasQuest(36812) &amp;&amp; !IsQuestCompleted(36812)" />
+    <CustomBehavior File="InteractWith" MobId="85077" WaitTime="2000" X="5793.926" Y="1275.813" Z="109.2717" />   
+    <CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" /> -->
+
+    <!-- Strike While the Iron is Hot -->
+    <CustomBehavior File="Message" Text="Flying for Quest (36574): Strike While the Iron is Hot" LogColor="CornflowerBlue" />
+    <PickUp QuestName="Strike While the Iron is Hot" QuestId="36574" GiverId="74594" GiverName="Durotan" X="5763.857" Y="1297.016" Z="106.9534" />
+    <CustomBehavior File="InteractWith" MobId="81055" WaitTime="2000" X="5816.885" Y="1306.451" Z="109.1539" />
+    <CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="100000" />
+    <CustomBehavior File="Message" Text="Waiting for slow...travel....time...." LogColor="CornflowerBlue" />
+
+    <If Condition="HasQuest(36574) &amp;&amp; !IsQuestCompleted(36574)" >
+        <CustomBehavior File="Message" Text="Interacting with Flight Master for Scenario!" LogColor="CornflowerBlue" />
+        <TurnIn QuestId="36574" TurnInId="74594" TurnInName="Durotan" QuestName="Strike While the Iron is Hot" X="5763.857" Y="1297.016" Z="106.9528" />
+    </If>
+    <CustomBehavior File="Message" Text="BONUS OBJECTIVES WILL BE ADDED LATER, FOCUS ON LEVELING!" LogColor="Cyan" />
+    <!-- BONUS OBJECTIVE <If Condition="HasQuest(36473) &amp;&amp; !IsQuestCompleted(36473)" >
+    <MoveTo X="5845.5" Y="1112.462" Z="90.09109" />
+    <PickUp QuestName="Bonus Objective: Affliction Ridge" QuestId="36473" GiverId="74594" GiverName="Durotan" X="5951.004" Y="1081.573" Z="118.8061"/>
+    <Objective QuestName="Strike While the Iron is Hot" QuestId="36574" Type="KillMob" KillCount="25" MobId="80699" MobName="Gronnling Bonebreaker" />
+    </If>
+
+    <CustomBehavior File="InteractWith" QuestId="36473" MobId="85540" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="8" WaitTime="2000" Range="5" CollectionDistance="10000" PreInteractMountStrategy="DismountOrCancelShapeshift" X="6597.116" Y="1190.561" Z="46.85722" /> -->
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33694): Reagents from Rakthoth" LogColor="Cyan" />
+    <TurnIn QuestId="33694" TurnInId="81731" TurnInName="Raktoth" QuestName="Reagents from Rakthoth" X="6880.623" Y="1029.911" Z="68.90749" />
+
+    <!-- Plant Pruning -->
+    <PickUp QuestName="Plant Pruning" QuestId="33689" GiverId="81731" GiverName="Rakthoth" X="6880.623" Y="1029.911" Z="68.90749"/>
+    <Objective QuestName="Plant Pruning" QuestId="33689" Type="KillMob" KillCount="12" MobId="81729" MobName="Primal Growth" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33689): Plant Pruning" LogColor="Cyan" />
+    <TurnIn QuestId="33689" TurnInId="85089" TurnInName="Rakthoth" QuestName="Plant Pruning" X="6972.672" Y="872.684" Z="93.21793" />
+
+    <!-- Ambassador to the Ancient -->
+    <PickUp QuestName="Ambassador to the Ancient" QuestId="33685" GiverId="81731" GiverName="Rakthoth" X="6880.623" Y="1029.911" Z="68.90749" />
+    <CustomBehavior File="Message" Text="Handlilng Gossip" LogColor="Cyan" />
+    <CustomBehavior File="InteractWith" QuestId="33685" MobId="81723" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="1" WaitTime="1000" />
+    <CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+    <CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+    <CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" /> 
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33685): Ambassador to the Ancient" LogColor="Cyan" />
+    <TurnIn QuestId="33685" TurnInId="85089" TurnInName="Rakthoth" QuestName="Ambassador to the Ancient" X="6972.672" Y="872.684" Z="93.21793" />
+
+    <!-- Shredder vs. Saberon -->
+    <PickUp QuestName="Shredder vs. Saberon" QuestId="33663" GiverId="85089" GiverName="Rakthoth" X="6972.672" Y="872.684" Z="93.21793"/>
+    <CustomBehavior File="InteractWith" QuestId="33663" MobId="235381" ObjectType="GameObject" NonCompeteDistance="0" NumOfTimes="1" WaitTime="5000" X="6937.3" Y="793.9132" Z="149.3734"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33663): Shredder vs. Saberon" LogColor="Cyan" />
+    <TurnIn QuestId="33663" TurnInId="82222" TurnInName="Rakthoth" QuestName="Shredder vs. Saberon" X="6920" Y="791" Z="155.0833" />
+
+    <!-- Steamscar "Reagents" -->
+    <PickUp QuestName="Steamscar &quot;Reagents&quot;" QuestId="33661" GiverId="82222" GiverName="Rakthoth" X="6920" Y="791" Z="155.0833"/>
+
+    <CustomBehavior File="Message" Text="Need to collect 8 Saberon Stash" LogColor="Cyan" />
+    <Objective QuestName="The Sacking of the Saberon" QuestId="33660" Type="CollectItem" ItemName="Saberon Stash" ItemId="232311" CollectCount="8" />
+
+    <CustomBehavior File="Message" Text="Need to collect 10 Saberon Heart" LogColor="Cyan" />
+    <Objective QuestName="Steamscar &quot;Reagents&quot;" QuestId="33661" Type="CollectItem" ItemName="Saberon Heart" ItemId="115443" CollectCount="10" />
+
+    <!-- The Sacking of the Saberon -->
+    <PickUp QuestName="The Sacking of the Saberon" QuestId="33660" GiverId="234474" GiverName="Rakthoth" X="6863.276" Y="826.5955" Z="144.8793"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33660): The Sacking of the Saberon" LogColor="Cyan" />
+    <TurnIn QuestId="33660" TurnInId="82225" TurnInName="Rakthoth" QuestName="The Sacking of the Saberon" X="6768.226" Y="744.2274" Z="189.4315" />
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33661): Steamscar Reagents" LogColor="Cyan" />
+    <TurnIn QuestId="33661" TurnInId="82225" TurnInName="Rakthoth" QuestName="Steamscar &quot;Reagents&quot;" X="6768.226" Y="744.2274" Z="189.4315" />
+
+    <!-- Taking the Death Bloom -->
+    <PickUp QuestName="Taking the Death Bloom" QuestId="33695" GiverId="82222" GiverName="Rakthoth" X="6768.226" Y="744.2274" Z="189.4315" />
+
+    <CustomBehavior File="Message" Text="Going to pwn Smokemaster Snarl" LogColor="Cyan" />
+    <Objective QuestName="Taking the Death Bloom" QuestId="33695" Type="KillMob" KillCount="1" MobId="81749" MobName="Smokemaster Snarl" X="6722.441" Y="628.6024" Z="189.8694"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33695): Taking the Death Bloom" LogColor="Cyan" />
+    <TurnIn QuestId="33695" TurnInId="82302" TurnInName="Birchus" QuestName="Taking the Death Bloom" X="7000" Y="955" Z="80.08334" />
+
+    <!-- Laying Dionor to Rest -->
+    <PickUp QuestName="Laying Dionor to Rest" QuestId="33706" GiverId="82302" GiverName="Birchus" X="7000" Y="955" Z="80.08334" WaitTime="5000"/>
+
+    <CustomBehavior File="Message" Text="Turning In Quest (33706): Laying Dionor to Rest" LogColor="Cyan" />
+    <TurnIn QuestId="33706" TurnInId="82302" TurnInName="Birchus" QuestName="Laying Dionor to Rest" X="7000" Y="955" Z="80.08334" />
+
+    <CustomBehavior File="Message" Text="YOU MUST BE LEVEL 94+ TO CONTINUE GROGROND QUESTLINE!" LogColor="Cyan" />
+  </QuestOrder>
+</HBProfile>
